@@ -95,66 +95,6 @@ Please refer to the datasheets and pinouts of your specific sensors and ESP32 de
 Step 2: Arduino Code
 Now, let's write a simple Arduino code to read data from the sensors and display it on the LCD. We'll also control the water pump based on the sensor readings. Please note that this is just a basic example to get you started, and you may need to adapt it according to your specific sensors and requirements.
 
-```arduino
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-
-// Define the I2C address of the LCD module
-#define LCD_ADDRESS 0x27
-#define LCD_COLS 20
-#define LCD_ROWS 4
-
-// Define pin numbers for the sensors and water pump
-#define MOISTURE_SENSOR_PIN A0
-#define TEMP_SENSOR_PIN D1
-#define LIGHT_SENSOR_PIN A1
-#define WATER_PUMP_PIN D2
-
-// Initialize the LCD object with I2C address and dimensions
-LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_COLS, LCD_ROWS);
-
-void setup() {
-  // Start the LCD
-  lcd.begin(LCD_COLS, LCD_ROWS);
-  lcd.backlight();
-
-  // Initialize Serial communication for debugging (optional)
-  Serial.begin(9600);
-}
-
-void loop() {
-  // Read sensor values
-  int moisture = analogRead(MOISTURE_SENSOR_PIN);
-  int temperature = digitalRead(TEMP_SENSOR_PIN);
-  int light = analogRead(LIGHT_SENSOR_PIN);
-
-  // Display sensor values on the LCD
-  lcd.setCursor(0, 0);
-  lcd.print("Moisture: ");
-  lcd.print(moisture);
-
-  lcd.setCursor(0, 1);
-  lcd.print("Temperature: ");
-  lcd.print(temperature);
-
-  lcd.setCursor(0, 2);
-  lcd.print("Light: ");
-  lcd.print(light);
-
-  // Control the water pump based on moisture level (example)
-  if (moisture < 500) {
-    // If moisture is low, turn on the water pump
-    digitalWrite(WATER_PUMP_PIN, HIGH);
-  } else {
-    // If moisture is sufficient, turn off the water pump
-    digitalWrite(WATER_PUMP_PIN, LOW);
-  }
-
-  // Add a delay for stability (adjust as needed)
-  delay(1000);
-}
-```
-
 Step 3: Uploading the Code
 1. Make sure you have the necessary libraries installed for the I2C LCD module and ESP32 board support.
 2. Connect your ESP32 board to your computer via USB.
@@ -165,8 +105,6 @@ Step 3: Uploading the Code
 After successfully uploading the code, the ESP32 will start reading data from the sensors and display it on the 20x4 LCD Module. Additionally, it will control the water pump based on the moisture level (you can adjust the threshold in the code).
 
 Please note that this is a basic example, and depending on the specific sensors and actuators you are using, you may need to calibrate the sensors, adjust the code, and implement more advanced features as required for your Smart Irrigation System.
-
-
 
 To implement Cloud Data Logging and Autonomous Irrigation using Firebase and the ESP32, we will follow these steps:
 
@@ -200,73 +138,6 @@ Step 1: Install the Required Libraries
 
 Step 2: Update Arduino Code
 Now, let's update the Arduino code to include Bluetooth communication for remote control.
-
-```arduino
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-#include <BluetoothSerial.h>
-
-// Define the I2C address of the LCD module
-#define LCD_ADDRESS 0x27
-#define LCD_COLS 20
-#define LCD_ROWS 4
-
-// Define pin numbers for the sensors and actuators
-#define MOISTURE_SENSOR_PIN A0
-#define TEMP_SENSOR_PIN D1
-#define LIGHT_SENSOR_PIN A1
-#define WATER_PUMP_PIN D2
-
-// Firebase Configuration and other code here...
-
-// Initialize the LCD object with I2C address and dimensions
-LiquidCrystal_I2C lcd(LCD_ADDRESS, LCD_COLS, LCD_ROWS);
-
-// Create an instance of the BluetoothSerial class
-BluetoothSerial SerialBT;
-
-void setup() {
-  // Start the LCD
-  lcd.begin(LCD_COLS, LCD_ROWS);
-  lcd.backlight();
-
-  // Initialize Serial communication for debugging (optional)
-  Serial.begin(9600);
-
-  // Connect to Wi-Fi and Firebase initialization here...
-
-  // Initialize Bluetooth
-  SerialBT.begin("SmartIrrigationSystem"); // Set the Bluetooth name that will be visible to other devices
-
-  // Other setup code here...
-}
-
-void loop() {
-  // Read sensor values and irrigation predictions here...
-
-  // Control the water pump based on the irrigation predictions here...
-
-  // Handle Bluetooth commands
-  if (SerialBT.available()) {
-    String command = SerialBT.readStringUntil('\n');
-    command.trim();
-
-    // Process received commands
-    if (command == "pump_on") {
-      digitalWrite(WATER_PUMP_PIN, HIGH); // Turn on the water pump
-      SerialBT.println("Pump turned ON");
-    } else if (command == "pump_off") {
-      digitalWrite(WATER_PUMP_PIN, LOW); // Turn off the water pump
-      SerialBT.println("Pump turned OFF");
-    } else {
-      SerialBT.println("Invalid command");
-    }
-  }
-
-  // Add a delay for stability (adjust as needed)
-  delay(1000);
-}
-```
 
 In this updated code, we have added the necessary Bluetooth initialization and handling. The ESP32 will start advertising itself as a Bluetooth device with the name "SmartIrrigationSystem" that can be discovered and connected to by other Bluetooth-enabled devices.
 

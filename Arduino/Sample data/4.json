@@ -1,0 +1,400 @@
+{
+  "pump_status": "OFF",
+  "sensor_readings": {
+    "3": {
+      "ldr": 2046,
+      "pump_status": false,
+      "soil_moisture": 485,
+      "temperature": 23.5625,
+      "timestamp": "3"
+    },
+    "4": {
+      "ldr": 2018,
+      "pump_status": false,
+      "soil_moisture": 386,
+      "temperature": 23.6875,
+      "timestamp": "4"
+    },
+    "9": {
+      "ldr": 2043,
+      "pump_status": false,
+      "soil_moisture": 443,
+      "temperature": 23.6875,
+      "timestamp": "9"
+    },
+    "11": {
+      "ldr": 2000,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.625,
+      "timestamp": "11"
+    },
+    "13": {
+      "ldr": 2001,
+      "pump_status": false,
+      "soil_moisture": 570,
+      "temperature": 23.75,
+      "timestamp": "13"
+    },
+    "17": {
+      "ldr": 2059,
+      "pump_status": false,
+      "soil_moisture": 571,
+      "temperature": 23.6875,
+      "timestamp": "17"
+    },
+    "18": {
+      "ldr": 2030,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.625,
+      "timestamp": "18"
+    },
+    "22": {
+      "ldr": 2061,
+      "pump_status": false,
+      "soil_moisture": 598,
+      "temperature": 23.75,
+      "timestamp": "22"
+    },
+    "25": {
+      "ldr": 2032,
+      "pump_status": false,
+      "soil_moisture": 486,
+      "temperature": 23.5625,
+      "timestamp": "25"
+    },
+    "27": {
+      "ldr": 2006,
+      "pump_status": true,
+      "soil_moisture": 664,
+      "temperature": 23.75,
+      "timestamp": "27"
+    },
+    "31": {
+      "ldr": 2047,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.625,
+      "timestamp": "31"
+    },
+    "32": {
+      "ldr": 2122,
+      "pump_status": true,
+      "soil_moisture": 1000,
+      "temperature": 23.75,
+      "timestamp": "32"
+    },
+    "36": {
+      "ldr": 2112,
+      "pump_status": false,
+      "soil_moisture": 422,
+      "temperature": 23.75,
+      "timestamp": "36"
+    },
+    "38": {
+      "ldr": 2007,
+      "pump_status": false,
+      "soil_moisture": 489,
+      "temperature": 23.6875,
+      "timestamp": "38"
+    },
+    "41": {
+      "ldr": 2019,
+      "pump_status": false,
+      "soil_moisture": 418,
+      "temperature": 23.75,
+      "timestamp": "41"
+    },
+    "44": {
+      "ldr": 2045,
+      "pump_status": false,
+      "soil_moisture": 485,
+      "temperature": 23.625,
+      "timestamp": "44"
+    },
+    "46": {
+      "ldr": 2032,
+      "pump_status": false,
+      "soil_moisture": 453,
+      "temperature": 23.75,
+      "timestamp": "46"
+    },
+    "50": {
+      "ldr": 2061,
+      "pump_status": false,
+      "soil_moisture": 469,
+      "temperature": 23.75,
+      "timestamp": "50"
+    },
+    "55": {
+      "ldr": 2026,
+      "pump_status": false,
+      "soil_moisture": 480,
+      "temperature": 23.75,
+      "timestamp": "55"
+    },
+    "59": {
+      "ldr": 2042,
+      "pump_status": false,
+      "soil_moisture": 482,
+      "temperature": 23.6875,
+      "timestamp": "59"
+    },
+    "61": {
+      "ldr": 2013,
+      "pump_status": false,
+      "soil_moisture": 489,
+      "temperature": 23.5625,
+      "timestamp": "61"
+    },
+    "63": {
+      "ldr": 2063,
+      "pump_status": false,
+      "soil_moisture": 485,
+      "temperature": 23.75,
+      "timestamp": "63"
+    },
+    "67": {
+      "ldr": 2073,
+      "pump_status": false,
+      "soil_moisture": 484,
+      "temperature": 23.75,
+      "timestamp": "67"
+    },
+    "72": {
+      "ldr": 2033,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "72"
+    },
+    "73": {
+      "ldr": 2032,
+      "pump_status": false,
+      "soil_moisture": 490,
+      "temperature": 23.625,
+      "timestamp": "73"
+    },
+    "76": {
+      "ldr": 2035,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.6875,
+      "timestamp": "76"
+    },
+    "79": {
+      "ldr": 1990,
+      "pump_status": false,
+      "soil_moisture": 490,
+      "temperature": 23.625,
+      "timestamp": "79"
+    },
+    "80": {
+      "ldr": 2071,
+      "pump_status": false,
+      "soil_moisture": 486,
+      "temperature": 23.75,
+      "timestamp": "80"
+    },
+    "85": {
+      "ldr": 2034,
+      "pump_status": false,
+      "soil_moisture": 484,
+      "temperature": 23.75,
+      "timestamp": "85"
+    },
+    "89": {
+      "ldr": 2042,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "89"
+    },
+    "94": {
+      "ldr": 2077,
+      "pump_status": false,
+      "soil_moisture": 491,
+      "temperature": 23.75,
+      "timestamp": "94"
+    },
+    "99": {
+      "ldr": 2046,
+      "pump_status": false,
+      "soil_moisture": 490,
+      "temperature": 23.75,
+      "timestamp": "99"
+    },
+    "101": {
+      "ldr": 2000,
+      "pump_status": false,
+      "soil_moisture": 484,
+      "temperature": 23.625,
+      "timestamp": "101"
+    },
+    "103": {
+      "ldr": 2066,
+      "pump_status": false,
+      "soil_moisture": 490,
+      "temperature": 23.75,
+      "timestamp": "103"
+    },
+    "107": {
+      "ldr": 2059,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "107"
+    },
+    "112": {
+      "ldr": 2064,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "112"
+    },
+    "113": {
+      "ldr": 2007,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.6875,
+      "timestamp": "113"
+    },
+    "116": {
+      "ldr": 2038,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.75,
+      "timestamp": "116"
+    },
+    "119": {
+      "ldr": 2044,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.625,
+      "timestamp": "119"
+    },
+    "120": {
+      "ldr": 2079,
+      "pump_status": false,
+      "soil_moisture": 489,
+      "temperature": 23.8125,
+      "timestamp": "120"
+    },
+    "124": {
+      "ldr": 2023,
+      "pump_status": false,
+      "soil_moisture": 493,
+      "temperature": 23.75,
+      "timestamp": "124"
+    },
+    "126": {
+      "ldr": 2014,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.625,
+      "timestamp": "126"
+    },
+    "130": {
+      "ldr": 2043,
+      "pump_status": false,
+      "soil_moisture": 489,
+      "temperature": 23.75,
+      "timestamp": "130"
+    },
+    "131": {
+      "ldr": 2030,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.625,
+      "timestamp": "131"
+    },
+    "135": {
+      "ldr": 2043,
+      "pump_status": false,
+      "soil_moisture": 490,
+      "temperature": 23.75,
+      "timestamp": "135"
+    },
+    "137": {
+      "ldr": 1994,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.625,
+      "timestamp": "137"
+    },
+    "139": {
+      "ldr": 2043,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "139"
+    },
+    "143": {
+      "ldr": 2081,
+      "pump_status": false,
+      "soil_moisture": 491,
+      "temperature": 23.75,
+      "timestamp": "143"
+    },
+    "148": {
+      "ldr": 2075,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "148"
+    },
+    "149": {
+      "ldr": 1996,
+      "pump_status": false,
+      "soil_moisture": 481,
+      "temperature": 23.625,
+      "timestamp": "149"
+    },
+    "152": {
+      "ldr": 2096,
+      "pump_status": false,
+      "soil_moisture": 487,
+      "temperature": 23.75,
+      "timestamp": "152"
+    },
+    "155": {
+      "ldr": 2017,
+      "pump_status": false,
+      "soil_moisture": 485,
+      "temperature": 23.625,
+      "timestamp": "155"
+    },
+    "156": {
+      "ldr": 2064,
+      "pump_status": false,
+      "soil_moisture": 488,
+      "temperature": 23.75,
+      "timestamp": "156"
+    },
+    "160": {
+      "ldr": 2082,
+      "pump_status": false,
+      "soil_moisture": 495,
+      "temperature": 23.75,
+      "timestamp": "160"
+    },
+    "161": {
+      "ldr": 1997,
+      "pump_status": false,
+      "soil_moisture": 485,
+      "temperature": 23.5625,
+      "timestamp": "161"
+    },
+    "165": {
+      "ldr": 2061,
+      "soil_moisture": 490,
+      "temperature": 23.75,
+      "timestamp": "165"
+    },
+    "166": {
+      "ldr": 2017,
+      "soil_moisture": 487
+    }
+  }
+}

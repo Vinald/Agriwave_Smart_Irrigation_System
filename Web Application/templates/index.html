@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* Body */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Header */
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Form */
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button[type="submit"] {
+      background-color: #021428;
+      color: white;
+      padding: 10px 180px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    /* Result */
+    .result {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .result h2 {
+      font-size: 24px;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>CAPSTONE PROJECT</h1>
+  <form action="{{ url_for('predict') }}" method="post">
+    <label for="crop_days">Crop Days:</label>
+    <input type="number" id="crop_days" name="crop_days" required>
+    <label for="soil_moisture">Soil Moisture:</label>
+    <input type="number" id="soil_moisture" name="soil_moisture" step="0.01" required>
+    <label for="temperature">Temperature:</label>
+    <input type="number" id="temperature" name="temperature" step="0.01" required>
+    <label for="crop_type">Crop Type:</label>
+    <select id="crop_type" name="crop_type">
+      <option value="Wheat">Wheat</option>
+      <option value="Groundnuts">Groundnuts</option>
+      <option value="Garden Flowers">Garden Flowers</option>
+      <option value="Maize">Maize</option>
+      <option value="Paddy">Paddy</option>
+      <option value="Potato">Potato</option>
+      <option value="Pulse">Pulse</option>
+      <option value="Sugarcane">Sugarcane</option>
+      <option value="Coffee">Coffee</option>
+     
+    </select>
+    <button type="submit">Predict</button>
+  </form>
+  {% if prediction %}
+  <div class="result">
+    <h2>Prediction: {{ prediction }}</h2>
+  </div>
+  {% endif %}
+</body>
+</html>

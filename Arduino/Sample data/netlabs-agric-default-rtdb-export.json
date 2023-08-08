@@ -1,0 +1,840 @@
+{
+  "sensor_readings": [
+    null,
+    {
+      "ldr": 1409,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1403,
+      "soil_moisture": 535,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1395,
+      "soil_moisture": 535,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1399,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1407,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 545,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1412,
+      "soil_moisture": 547,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1419,
+      "soil_moisture": 546,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1389,
+      "soil_moisture": 548,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1398,
+      "soil_moisture": 551,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1399,
+      "soil_moisture": 545,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1394,
+      "soil_moisture": 561,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1402,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1409,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1437,
+      "soil_moisture": 541,
+      "temperature": 26
+    },
+    {
+      "ldr": 1427,
+      "soil_moisture": 544,
+      "temperature": 26
+    },
+    {
+      "ldr": 1404,
+      "soil_moisture": 541,
+      "temperature": 26
+    },
+    {
+      "ldr": 1397,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1403,
+      "soil_moisture": 539,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1418,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1390,
+      "soil_moisture": 535,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 537,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1390,
+      "soil_moisture": 533,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1385,
+      "soil_moisture": 529,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1415,
+      "soil_moisture": 542,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1409,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1411,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1412,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1413,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1409,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1394,
+      "soil_moisture": 545,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1375,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1427,
+      "soil_moisture": 537,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1453,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 539,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1409,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1418,
+      "soil_moisture": 536,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1421,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1421,
+      "soil_moisture": 537,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1420,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1425,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1411,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1454,
+      "soil_moisture": 541,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1429,
+      "soil_moisture": 539,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1412,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1410,
+      "soil_moisture": 542,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1357,
+      "soil_moisture": 541,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1423,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1399,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1389,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1407,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1451,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1373,
+      "soil_moisture": 541,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1385,
+      "soil_moisture": 542,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1455,
+      "soil_moisture": 545,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1456,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1369,
+      "soil_moisture": 544,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 544,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1456,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1457,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1404,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1381,
+      "soil_moisture": 546,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1397,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1360,
+      "soil_moisture": 544,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1369,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1387,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1372,
+      "soil_moisture": 541,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1406,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1454,
+      "soil_moisture": 542,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1466,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1384,
+      "soil_moisture": 541,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1381,
+      "soil_moisture": 542,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1372,
+      "soil_moisture": 541,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1382,
+      "soil_moisture": 545,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1383,
+      "soil_moisture": 547,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1385,
+      "soil_moisture": 548,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1381,
+      "soil_moisture": 548,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 545,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1385,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1380,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 546,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 546,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1381,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1384,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1381,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1390,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1375,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1380,
+      "soil_moisture": 544,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 545,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1365,
+      "soil_moisture": 544,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1375,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1361,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1377,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1377,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1365,
+      "soil_moisture": 543,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1358,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1372,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1367,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1365,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1388,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1377,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 541,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1375,
+      "soil_moisture": 540,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1382,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1378,
+      "soil_moisture": 544,
+      "temperature": 26
+    },
+    {
+      "ldr": 1419,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1396,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 544,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 541,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1401,
+      "soil_moisture": 539,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1399,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1397,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1390,
+      "soil_moisture": 536,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1379,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1395,
+      "soil_moisture": 538,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 539,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1389,
+      "soil_moisture": 536,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1393,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1370,
+      "soil_moisture": 536,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1392,
+      "soil_moisture": 536,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1397,
+      "soil_moisture": 538,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1370,
+      "soil_moisture": 540,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1425,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1424,
+      "soil_moisture": 544,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1406,
+      "soil_moisture": 541,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1408,
+      "soil_moisture": 542,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 543,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1394,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1395,
+      "soil_moisture": 539,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1401,
+      "soil_moisture": 533,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1405,
+      "soil_moisture": 535,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1399,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1402,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1401,
+      "soil_moisture": 534,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1409,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1413,
+      "soil_moisture": 538,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1414,
+      "soil_moisture": 537,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1435,
+      "soil_moisture": 535,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1420,
+      "soil_moisture": 534,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1424,
+      "soil_moisture": 520,
+      "temperature": 25.875
+    },
+    {
+      "ldr": 1419,
+      "soil_moisture": 531,
+      "temperature": 25.9375
+    },
+    {
+      "ldr": 1424,
+      "soil_moisture": 532,
+      "temperature": 25.9375
+    }
+  ]
+}

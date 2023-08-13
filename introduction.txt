@@ -1,0 +1,100 @@
+introduction
+netLabs!lJG has been engaged by Precision AgriTech, a forward-thinking farm to develop a
+cutting-edge Smart Irrigation System. The farm is committed to sustainable agriculture and aims
+to optimize water usage, increase crop yield, and reduce operational costs. To achieve these
+objectives, you are tasked to design an advanced system integrating an ESP32 microcontroller
+board, soil moisture, temperature, and light intensity sensors, Machine Learning (ML)
+algorithms, a web application for real-time visualizations, Bluetooth for remote control, and
+actuators.
+
+
+Part 1: Embedded System Design
+With the knowledge obtained from the embedded systems module,
+Microcontroller circuit using the following key components:
+ESP32 Development Board
+Resistive Soil Moisture Sensor Module
+Submersible Digital Temperature Sensor
+LDR Light Dependent Resistor GL5506
+20x4 Display LCD Module
+Water Pump
+
+
+Sensor and Actuator Interfacing:
+You will configure the ESP32 microcontroller board, to collect soil moisture, temperature and
+light intensity readings using Resistive Soil Moisture Sensor Module, Submersible Digital
+Temperature Sensor and LDR Light Dependent Resistor GL5506 respectively. The incoming
+sensor readings should be displayed on a 20x4 Display LCD Module and a water pump should
+be configured for actuation purposes.
+
+
+Cloud Data Logging and Autonomous Irrigation:
+You will set up communication with a real-time database e.g. Firebase to log sensor data and
+develop logic on the ESP32 to autonomously control the actuators (water pump and irrigation
+valves) based on the ML model's irrigation predictions.
+
+Remote Control:
+You will implement Bluetooth communication on the ESP32 to enable remote control capabilities
+and allow authorized users to adjust irrigation schedules and settings via Bluetooth-enabled
+devices.
+
+
+Deliverables
+I. A microcontroller based system
+Collecting soil moisture, temperature and light intensity readings
+Logging sensor readings to a real-time database
+Autonomously controlling irrigation based on ML model's predictions and
+authorized users' triggers.
+
+Part 2: Machine Learning Model Development
+With the knowledge acquired from the Python module, you are required to develop an ML model
+to predict optimal irrigation timings using a custom dataset that will be provided.
+
+Data Preprocessing and Feature Selection:
+You will be required to process the provided dataset, ensuring data integrity and handling any
+missing values or outliers as well as select relevant features for ML model training.
+
+Model Training:
+You will be required to train an ML model to predict optimal irrigation timings based on historical
+sensor data and crop requirements.
+
+
+Model Integration and Deployment:
+You will be required to convert the trained ML model to a format compatible with the ESP32 and
+deploy it on the ESP32 to enable on-device predictions.
+
+Deliverables:
+1. You will be required to develop an ML model to predict optimal irrigation timings
+2. You will be required to deploy the trained model on the ESP32 for on-device predictions.
+
+Part 3: Web Application
+With the knowledge obtained from the Python module, you are required to develop a web
+application using the Flask framework.
+
+Real-Time Visualization and ML Model Deployment:
+You will be required to develop a user-friendly web application and implement functionalities to
+visualize real-time sensor data and ML model predictions on the web application. The
+developed ML model should also alternatively be deployed on the web application.
+
+User Authentication and Authorization:
+You will be required to implement secure user authentication and authorization mechanisms to
+ensure only authorized users can access the web application.
+
+Data Interaction with Real-Time Database:
+The web application should be integrated with the real-time database to fetch and display the
+latest sensor data and ML model predictions.
+
+Responsive Design and User Experience:
+The web application should have a responsive layout to ensure compatibility with various
+devices (e.g., smartphones, tablets, and computers) and should have an optimized user
+interface for a seamless and intuitive user experience.
+
+Deliverables
+1. A responsive and secure web application
+Housing the trained ML model
+
+General Project Guidelines:
+You are expected to have a MOCK presentation of the project on 16th August 2023, and
+the final presentation will be 18th August 2023.
+Follow the appropriate principles that govern project management to accomplish the
+project objectives in the set timelines.
+Providing real-time visualizations of sensor data and ML model predictions.

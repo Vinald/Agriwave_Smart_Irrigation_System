@@ -1,0 +1,30 @@
+<!-- predict.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Crop Irrigation Prediction</h1>
+  <form method="POST" action="{{ url_for('predict') }}">
+    <label for="CropType">Crop Type:</label>
+    <select name="CropType" id="CropType">
+      <option value="Wheat">Wheat</option>
+      <option value="Groundnuts">Groundnuts</option>
+      <option value="WGarden Flower">Garden Flower</option>
+      <option value="Maize">Maize</option>
+      <option value="Paddy">Paddy</option>
+      <option value="Potato">Potato</option>
+      <option value="Pulse">Pulse</option>
+      <option value="Sugarcane">Sugarcane</option>
+      <option value="Coffee">Coffee</option>
+    </select>
+
+    <label for="CropDays">Crop Days:</label>
+    <input type="number" name="CropDays" required>
+
+    <label for="temperature">Temperature (°C):</label>
+    <input type="number" name="temperature" required>
+
+    <label for="SoilMoisture">Soil Moisture:</label>
+    <input type="number" name="SoilMoisture" required>
+
+    <input type="submit" value="Predict">
+  </form>
+{% endblock %}

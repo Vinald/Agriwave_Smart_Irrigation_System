@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>Welcome to Smart Irrigation System.</h1>
+    <ul>
+        <li><a href="{{ url_for('predict') }}">1.Real-Time Data Display</a></li>
+        <li><a href="{{ url_for('visualization') }}">2.Real-Time Data Visualization </a></li> 
+         
+        
+      </ul>
+      
+      
+    
+      <li><a href="{{ url_for('predict') }}">3.Manual ML Prediction(For technician only)</a></li>
+      <a href="{{url_for('logout')}}">4.Press here to logout</a>
+</body>
+
+</html>

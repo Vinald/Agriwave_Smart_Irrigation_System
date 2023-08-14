@@ -1,0 +1,31 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Add your CSS and other head elements here -->
+</head>
+<body>
+  <header>
+    <h1>{{ title }}</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+        <!-- <li><a href="{{ url_for('predict') }}">Realtime_data</a></li> -->
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <!-- Add your footer content here -->
+  </footer>
+</body>
+</html>

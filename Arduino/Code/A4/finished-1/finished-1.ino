@@ -7,7 +7,7 @@
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 #include <BluetoothSerial.h>
-#include <modelNew.h>
+#include <my_new_model.h>
 // #include <pipeline.h>
 #include <vector> // Add this include for std::vector
 
@@ -23,8 +23,9 @@ const int temperatureSensorPin = 17;
 // Constants for Firebase
 #define WIFI_SSID "vinald"
 #define WIFI_PASSWORD "14231423"
-#define FIREBASE_HOST F("https://agriculture-a2856-default-rtdb.firebaseio.com/")
-#define FIREBASE_AUTH F("YOUR_FIREBASE_AUTH_TOKEN")
+#define FIREBASE_HOST F("https://smart-irrigation-system-97ed9-default-rtdb.firebaseio.com/")
+#define FIREBASE_AUTH F("AIzaSyA-RMphMNooQI4_ggJBPfmn-pbujESbARc")
+
 OneWire oneWire(temperatureSensorPin);
 DallasTemperature DS18B20(&oneWire);
 
@@ -46,7 +47,7 @@ BluetoothSerial SerialBT;
 // Declare the loadRandomForestModel function
 void loadRandomForestModel();
 
-Eloquent::ML::Port::RandomForest rf_classifier;
+// Eloquent::ML::Port::RandomForest rf_classifier;
 
 //declaring variable for inputs
 char* str_CropType;
@@ -122,26 +123,26 @@ void loop() {
 
   // Preprocessing of sensor data
   temperature = temperatureC;
-  str_CropType = "Garden Flowers";
+  str_CropType = "Coffee";
   int CropType = label_encoded_croptype(str_CropType);
   SoilMoisture = mappedSoilMoistureValue;  
-  CropDays = 15;
+  CropDays = 21;
   
   // Performing feature extraction
-  float features_array[] = { static_cast<float>(CropType), CropDays, temperature, SoilMoisture };
+  float features_array[] = {CropType, CropDays, SoilMoisture,  temperature};
   // if (!myPipeline.transform(features_array)){
   //   return;
   // }
   
   // Predict using the converted features
   // float prediction = rf_classifier.predict(myPipeline.transform(features_array));
-  float prediction = rf_classifier.predict(features_array);
+  int prediction = myModel.predict(features_array);
 
    // Display the predicted result
   Serial.print("Predicted Result: ");
-  if (prediction == 0.0) {
+  if (prediction == 0) {
     Serial.println("No Irrigation");
-  } else if (prediction == 1.0) {
+  } else if (prediction == 1) {
     Serial.println("Irrigation");
   } else {
     Serial.println("Unknown");

@@ -6,13 +6,13 @@
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 
-#define WIFI_SSID "vx"
+#define WIFI_SSID "vinald"
 #define WIFI_PASSWORD "14231423"
-#define FIREBASE_HOST F("https://lesson-3-14dc0-default-rtdb.firebaseio.com/")
-#define FIREBASE_AUTH F("AIzaSyAgnMD_uFO5zrqEtTRouctYp5LO4k4-W8M")
+#define FIREBASE_HOST F("https://smart-irrigation-system-97ed9-default-rtdb.firebaseio.com/")
+#define FIREBASE_AUTH F("AIzaSyA-RMphMNooQI4_ggJBPfmn-pbujESbARc")
 
 const byte soilMoisturePin = A0;
-const byte LDRPin = 2;
+const byte LDRPin = 34;
 const byte temperatureSensorPin = 17;
 const int relayPin = 32;
 
@@ -36,7 +36,7 @@ void setup()
   pinMode(relayPin, OUTPUT);
   digitalWrite(relayPin, LOW);  // Initially turn off the relay
 
-  lcd.begin();
+  lcd.init();
   lcd.backlight();
 
   DS18B20.begin();
@@ -128,7 +128,7 @@ void loop()
 
   // Turn the relay on or off based on the moisture and temperature values
   if (turnOnPump)
-  
+  {
     // Turn on the water pump
     digitalWrite(relayPin, HIGH);
     Serial.println("Water pump ON");

@@ -6,10 +6,12 @@
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 
-#define WIFI_SSID "vx"
+#define WIFI_SSID "vinald"
 #define WIFI_PASSWORD "14231423"
-#define FIREBASE_HOST F("https://lesson-3-14dc0-default-rtdb.firebaseio.com/")
-#define FIREBASE_AUTH F("AIzaSyAgnMD_uFO5zrqEtTRouctYp5LO4k4-W8M")
+// #define FIREBASE_HOST F("https://lesson-3-14dc0-default-rtdb.firebaseio.com/")
+// #define FIREBASE_AUTH F("AIzaSyAgnMD_uFO5zrqEtTRouctYp5LO4k4-W8M")
+#define FIREBASE_HOST "https://capstone-trial-46d33-default-rtdb.firebaseio.com/Distance"
+#define FIREBASE_AUTH "0e3f20a73a474d9d19a91e5f4d4d7337c710ac12"
 
 const byte soilMoisturePin = A0;
 const byte LDRPin = 2;
@@ -28,7 +30,7 @@ void setup() {
   pinMode(soilMoisturePin, INPUT);
   pinMode(LDRPin, INPUT);
   
-  lcd.begin();
+  lcd.init();
   lcd.backlight();
 
   DS18B20.begin();

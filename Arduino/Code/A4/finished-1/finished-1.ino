@@ -27,8 +27,8 @@ bool pumpStatus = false;
 // Constants for Firebase
 #define WIFI_SSID "vinald"
 #define WIFI_PASSWORD "14231423"
-#define FIREBASE_HOST F("https://smart-irrigation-system-97ed9-default-rtdb.firebaseio.com/")
-#define FIREBASE_AUTH F("AIzaSyA-RMphMNooQI4_ggJBPfmn-pbujESbARc")
+#define FIREBASE_HOST "https://capstone-trial-46d33-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH "0e3f20a73a474d9d19a91e5f4d4d7337c710ac12"
 
 OneWire oneWire(temperatureSensorPin);
 DallasTemperature DS18B20(&oneWire);
@@ -165,12 +165,6 @@ void loop() {
     Serial.println("ThingSpeak Problem. HTTP error code: " + String(x));
   }
 
-   // Prepare input data for prediction
-  // str_CropType = 8; // 'Coffee' corresponds to 8 (as you've mentioned in the comment)
-  // float CropDays = 15.0; // Change this to the actual value
-  // float Temperature = temperatureC;
-  // float SoilMoisture = mappedSoilMoistureValue;
-
   unsigned long currentMillis = millis();
   String timestampStr = String(currentMillis / 1000);
   Firebase.setInt(firebaseData, "/sensor_readings/" + timestampStr + "/soil_moisture", mappedSoilMoistureValue);
@@ -191,6 +185,9 @@ void loop() {
   lcd.setCursor(0, 2);
   lcd.print("LDR: ");
   lcd.print(ldrValue);
+  // lcd.setCursor(0, 3);
+  // lcd.print("Pump Status: ");
+  // lcd.print(newPumpStatus);
 
   delay(500);
 }

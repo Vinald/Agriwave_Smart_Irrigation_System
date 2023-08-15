@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            background-image: url('static/SmartIrrigation.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            text-align: center;
+            padding: 100px 0;
+            color: white; /* Set text color to white */
+        }
+        h1.display-4 {
+            font-size: 2.5rem; /* Increase the font size for the welcome message */
+            margin-bottom: 30px; /* Add spacing below the welcome message */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px; /* Increase spacing between list items */
+        }
+        .btn {
+            font-size: 1.25rem; /* Increase button text size */
+            padding: 10px 20px; /* Adjust button padding */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Welcome to Smart Irrigation System</h1>
+        <ul class="text-left">
+            <li><a href="{{url_for('realtime_database') }}" class="btn btn-primary">1. Real-Time Data Display</a></li>
+            <li><a href="{{ url_for('visualization') }}" class="btn btn-primary">2. Real-Time Data Visualization</a></li>
+            <li><a href="{{ url_for('predict') }}" class="btn btn-primary">3. Manual ML Prediction (For technician only)</a></li>
+        </ul>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">4. Press here to logout</a>
+    </div>
+</body>
+</html>

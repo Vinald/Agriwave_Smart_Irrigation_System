@@ -8,17 +8,21 @@
 #include <FirebaseESP32.h>
 #include <BluetoothSerial.h>
 #include <my_new_model.h>
-// #include <pipeline.h>
-#include <vector> // Add this include for std::vector
+#include <vector> 
 
 // Constants for ThingSpeak
 const char* ssid = "vinald";
 const char* password = "14231423";
 unsigned long myChannel = 2234562;
 const char* apiKey = "H0JAID5SFXIIFCJX";
+
+
 const int soilMoisturePin = A0; 
 const int LDRPin = 34;
 const int temperatureSensorPin = 17; 
+const int relayPin = 32;
+bool pumpStatus = false;
+
 
 // Constants for Firebase
 #define WIFI_SSID "vinald"
@@ -28,26 +32,16 @@ const int temperatureSensorPin = 17;
 
 OneWire oneWire(temperatureSensorPin);
 DallasTemperature DS18B20(&oneWire);
-
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 WiFiClient client;
 FirebaseData firebaseData;
+BluetoothSerial SerialBT;
 
 // Constants for pump control
 const int moistureThresholdMin = 600;
 const int moistureThresholdMax = 1000;
 const int temperatureThresholdMin = 30;
 const int temperatureThresholdMax = 50;
-
-const int relayPin = 32;
-bool pumpStatus = false;
-
-BluetoothSerial SerialBT;
-
-// Declare the loadRandomForestModel function
-void loadRandomForestModel();
-
-// Eloquent::ML::Port::RandomForest rf_classifier;
 
 //declaring variable for inputs
 char* str_CropType;
@@ -79,8 +73,6 @@ int label_encoded_croptype(char* str_CropType) {
   return -1;
 }
 
-//instatiating the scaler 
-// pipeline myPipeline;
 
 void setup() {
   Serial.begin(9600);
@@ -107,11 +99,6 @@ void setup() {
 
   Serial.println("Bluetooth device ready for pairing.");
 
-  // Load the RandomForest model
-  // loadRandomForestModel();
-
-
-  
 }
 
 void loop() {
@@ -130,12 +117,8 @@ void loop() {
   
   // Performing feature extraction
   float features_array[] = {CropType, CropDays, SoilMoisture,  temperature};
-  // if (!myPipeline.transform(features_array)){
-  //   return;
-  // }
-  
+
   // Predict using the converted features
-  // float prediction = rf_classifier.predict(myPipeline.transform(features_array));
   int prediction = myModel.predict(features_array);
 
    // Display the predicted result

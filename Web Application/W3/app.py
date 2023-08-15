@@ -10,6 +10,8 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, log
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, FloatField, SelectField
 from wtforms.validators import InputRequired, Length, ValidationError
+
+# Class of functions
 from flask_bcrypt import Bcrypt
 import pandas as pd
 import joblib

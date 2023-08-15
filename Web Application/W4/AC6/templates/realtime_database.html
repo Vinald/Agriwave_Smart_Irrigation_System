@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Data Display</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #latest-data {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #data-list {
+            list-style: none;
+            padding: 0;
+        }
+        #data-list li {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Firebase Data Display</h1>
+    <div id="latest-data"></div>
+    <ul id="data-list"></ul>
+
+     <script>
+        $(document).ready(function() {
+            function fetchLatestData() {
+                $.get('/get_latest_data', function(data) {
+                    var latestData = $('#latest-data');
+                    latestData.empty();
+                    latestData.append('<p>Latest Time of reading: ' + data.timestamp + '</p>');
+                    latestData.append('<p>Latest Distance: ' + data.distance + ' cm</p>');
+                });
+            }
+
+            function fetchData() {
+                $.get('/get_data', function(data) {
+                    var dataList = $('#data-list');
+                    dataList.empty();
+                    $.each(data, function(timestamp, values) {
+                        dataList.append('<li>Timestamp: ' + timestamp + ' | Distance: ' + values.Distance + ' cm</li>');
+                    });
+                });
+            }
+
+            // Fetch latest data initially
+            fetchLatestData();
+
+            // Fetch latest data every 5 seconds
+            setInterval(fetchLatestData, 5000);
+
+            // Fetch data initially
+            fetchData();
+
+            // Fetch data every 5 seconds
+            setInterval(fetchData, 5000);
+        });
+    </script>>
+</body>
+</html>
+{% endblock %}

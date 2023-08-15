@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            background-image: url('static/login.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            text-align: center;
+            padding: 100px 0;
+            color: white; /* Change text color to white */
+            position: relative;
+        }
+        .heading {
+            font-size: 4rem; /* Increase the font size */
+            font-weight: bold; /* Make the text bold */
+            color: white; /* Set the text color to white */
+            margin-bottom: 20px; /* Add some spacing below the heading */
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        .btn {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay"></div> <!-- Add the overlay -->
+        <h1 class="display-4 heading">SMART IRRIGATION WEB APP</h1>
+        <div class="btn-group">
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login Page</a>
+        </div>
+        <div class="btn-group">
+            <a href="{{ url_for('register') }}" class="btn btn-secondary btn-lg">Register Page</a>
+        </div>
+    </div>
+</body>
+</html>

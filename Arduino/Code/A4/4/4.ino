@@ -190,8 +190,8 @@
     // float Temperature = temperatureC;
     // float SoilMoisture = mappedSoilMoistureValue;
 
-    // currentMillis = millis();
-    // String timestampStr = String(currentMillis / 1000);
+    currentMillis = millis();
+    String timestampStr = String(currentMillis / 1000);
     Firebase.setInt(firebaseData, "/sensor_readings/" + timestampStr + "/soil_moisture", mappedSoilMoistureValue);
     Firebase.setInt(firebaseData, "/sensor_readings/" + timestampStr + "/ldr", ldrValue);
     Firebase.setFloat(firebaseData, "/sensor_readings/" + timestampStr + "/temperature", temperatureC);

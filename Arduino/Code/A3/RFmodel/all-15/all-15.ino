@@ -122,7 +122,7 @@
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("Moisture: ");
-    lcd.print(mappedSoilMoistureValue);
+    lcd.print(mappedSoilMo  istureValue);
     lcd.setCursor(0, 1);
     lcd.print("Temp: ");
     lcd.print(temperatureC);

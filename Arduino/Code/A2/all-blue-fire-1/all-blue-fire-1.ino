@@ -83,7 +83,7 @@ void loop() {
   printSensorValue(F("LDR Value: "), ldrValue);
 
   updateLCDLine(0, F("Moisture: "), soilMoistureValue);
-  updateLCDLine(1, F("Temp: "), temperatureC, F("°C"));
+  updateLCDLine(1, F("Temp: "), temperatureC, F("C"));
   updateLCDLine(2, F("LDR: "), ldrValue);
 
   Firebase.setInt(firebaseData, "/sensor_readings/soil_moisture", soilMoistureValue);

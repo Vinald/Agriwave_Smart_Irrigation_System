@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Irrigation Predictor</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+      <h1 style="color: blue"; font-size: 18px; >
+        Irrigation Predictor</h1><br>
+	<form action="{{url_for('predict')}}" method="post" >
+		<label for="CropDays">CropDays:</label>
+		<input type="number"  name="CropDays" id="CropDays"><br><br>
+
+        <label for="temperature">temperature:</label>
+		<input type="number"  name="temperature" id="temperature"><br><br>
+
+        <label for="SoilMoisture">SoilMoisture:</label>
+		<input type="number"  name="SoilMoisture" id="SoilMoisture"><br><br>
+
+        <label for ="CropType">  CropType:</label>
+		<select  name="CropType" id= "CropType" required>
+            <option value="Wheat">Wheat</option>
+            <option value="Groundnuts">Groundnuts</option>
+            <option value="Garden Flower">Garden Flower</option>
+            <option value="Maize">Maize</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Potato">Potato</option>
+            <option value="Pulse">Pulse</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Coffee">Coffee</option>
+        </select><br><br>
+
+		<input type="submit" value="Predict">
+	</form>
+
+		<h2 style="color:Green"; >
+            {{ prediction_text }}
+	  		</h2>
+
+</body>
+</html>

@@ -16,7 +16,7 @@ import joblib
 from firebase import firebase
 
 
-
+#Instantiating with the Flask class
 app = Flask(__name__)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -151,20 +151,13 @@ def predict():
             return "Error: {}".format(str(e))
     else:
         return render_template('predict.html', prediction_text='')
+
+
 # Route for the real-time visualization
 @app.route('/visualization')
 def visualization():
 
     return render_template('visualization.html')
-
-
-# Function to convert model output to human-readable prediction labels
-def outputer(output):
-    if output[0] == 0:
-        new_output = "Not irrigating"
-    elif output[0] == 1:
-        new_output = "Irrigating"
-    return new_output
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -187,12 +180,12 @@ def light():
 def pump():
     return render_template('pump.html')
 
-
+# Retrieving realtime data from the firebase database.
 FIREBASE_URL = "https://capstone-trial-46d33-default-rtdb.firebaseio.com/sensor_readings"
 
 @app.route('/realtime_database')
 def realtime_database():
-    return render_template('realtime_database.html')
+    return render_template('trial4.html')
 
 @app.route('/get_latest_data')
 def get_latest_data():
@@ -206,6 +199,14 @@ def get_latest_data():
     else:
         return jsonify({'timestamp': 'N/A', 'distance': 'N/A'})
 
+
+# Function to convert model output to human-readable prediction labels
+def outputer(output):
+    if output[0] == 0:
+        new_output = "Not irrigating"
+    elif output[0] == 1:
+        new_output = "Irrigating"
+    return new_output
 
 # Run the app
 if __name__ == '__main__':

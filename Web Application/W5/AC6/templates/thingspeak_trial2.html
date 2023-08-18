@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ThingSpeak Data</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function fetchAndUpdateData() {
+            $.ajax({
+                url: "/get_data",
+                type: "GET",
+                success: function(data) {
+                    updateTable(data);
+                }
+            });
+        }
+
+        function updateTable(data) {
+            var tableBody = "";
+            for (var i = 0; i < data.length; i++) {
+                tableBody += "<tr>";
+                tableBody += "<td>" + data[i].entry_id + "</td>";
+                tableBody += "<td>" + data[i].field1 + "</td>";
+                tableBody += "<td>" + data[i].created_at + "</td>";
+                tableBody += "</tr>";
+            }
+            document.getElementById("data-table").innerHTML = tableBody;
+        }
+
+        // Fetch and update data every 5 seconds
+        setInterval(fetchAndUpdateData, 5000);
+    </script>
+</head>
+<body>
+    <h1>ThingSpeak Data</h1>
+    <table border="1" id="data-table">
+        <tr>
+            <th>ID</th>
+            <th>Distance</th>
+            <th>Timestamp</th>
+        </tr>
+    </table>
+</body>
+</html>

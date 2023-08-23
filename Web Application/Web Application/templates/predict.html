@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #dcd5d5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .heading {
+      text-align: center;
+      font-weight: bolder;
+    }
+    
+    label {
+      font-weight: bold;
+      font-size: large;
+    }
+    
+    .button {
+      width: 100%;
+      background: green;
+      color: white;
+    }
+    
+    .button:hover {
+      color: green;
+      border: 2px solid green;
+      font-weight: bolder;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin: 40px; /* Add margin for spacing */
+    }
+    
+    form {
+      background: rgb(244, 244, 241);
+      border-radius: 20px;
+      width: 100%; /* Full width on small screens */
+      padding: 20px; /* Add padding for spacing */
+    }
+    
+    .form-section {
+      align-items: center;
+    }
+    @media (min-width: 912px) {
+      form {
+        width: 90%;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    /* Responsive styles for tablets and phones */
+    @media (max-width: 768px) {
+      .container {
+        margin: 2px;
+
+      }
+
+      form {
+        width: 95%; /* Adjust the form width for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container d-flex flex-column">
+      <div>
+        <h1 class="display-5 my-3 heading text-uppercase">Crop Irrigation Prediction</h1>
+      </div>
+
+      <div class="form-section d-flex flex-column">
+        <form method="POST" action="{{ url_for('predict') }}" class="form">
+          <div class="form-group">
+            <label for="CropType">Crop Type:</label>
+            <select name="CropType" id="CropType" class="form-control">
+              <option value="Wheat">Wheat</option>
+              <option value="Groundnuts">Groundnuts</option>
+              <option value="WGarden Flower">Garden Flower</option>
+              <option value="Maize">Maize</option>
+              <option value="Paddy">Paddy</option>
+              <option value="Potato">Potato</option>
+              <option value="Pulse">Pulse</option>
+              <option value="Sugarcane">Sugarcane</option>
+              <option value="Coffee">Coffee</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="CropDays">Crop Days:</label>
+            <input type="number" name="CropDays" class="form-control" required placeholder="Please enter how old the crop is? ( days )">
+          </div>
+  
+          <div class="form-group">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" name="temperature" class="form-control" required placeholder="Please enter the temperature value.">
+          </div>
+  
+          <div class="form-group">
+            <label for="SoilMoisture">Soil Moisture:</label>
+            <input type="number" name="SoilMoisture" class="form-control" required placeholder="Please enter the soil moisture level.">
+          </div>
+  
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg px-5 button">Predict</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+</body>
+</html>
+{% endblock %}

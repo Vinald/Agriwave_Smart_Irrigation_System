@@ -1,0 +1,63 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Add your CSS and other head elements here -->
+  <style>
+    body{
+      background-color: #dcd5d5;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      
+    }
+    nav {
+      background: green;
+      color: white;
+    }
+    .nav-link {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light"> 
+      <a class="navbar-brand text-uppercase text-light" href="{{ url_for('dashboard') }}">Smart Irrigation</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- end of the menu button -->
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ">
+
+          <li class="nav-item ">
+            <a class="nav-link text-light" href="{{ url_for('dashboard') }}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url_for('visualization') }}">Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url_for('predict') }}">Predict</a>
+          </li>          <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url_for('realtime_database') }}">Database</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

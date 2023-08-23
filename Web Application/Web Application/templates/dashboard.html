@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        body {
+            background-image: url('static/login.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: sans-serif;
+        }
+        .container {
+            text-align: center;
+            color: white; /* Set text color to white */
+            padding: 100px 0;
+        }
+        .title {
+            font-size: 3rem;
+            font-weight: bolder;
+            color: blue;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow sections to wrap to the next row on smaller screens */
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .section {
+            flex-basis: calc(33.33% - 20px);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-bottom: 20px; /* Add margin between sections */
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .section p {
+            margin-bottom: 20px;
+        }
+        .btn {
+            font-size: 1.25rem; /* Increase button text size */
+            padding: 10px 20px; /* Adjust button padding */
+            display: block;
+            /*width: 100%;*/
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) { /* Tablets and smaller */
+            .section {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) { /* Phones and smaller */
+            .title {
+                font-size: 2rem;
+            }
+            .section {
+                flex-basis: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Smart Farm Sensor</h1>
+        <div class="section-container">
+
+            <div class="section">
+                <h2>Real-Time Data</h2>
+                <p>View the real-time sensor data from the farm in table form.</p>
+                <a href="{{ url_for('realtime_database') }}" class="btn btn-primary bottom-0">View Data</a>
+            </div>
+
+            <div class="section">
+                <h2>Visualization</h2>
+                <p>Visualize the sensor data using charts and graphs.</p>
+                <a href="{{ url_for('visualization') }}" class="btn btn-primary">Visualize Data</a>
+            </div>
+
+            <div class="section">
+                <h2>Prediction</h2>
+                <p>Generate predictions and insights from sensor data (For technicians only).</p>
+                <a href="{{ url_for('predict') }}" class="btn btn-primary ">Generate Predictions</a>
+            </div>
+
+        </div>
+
+        <!-- ------------end of the section -------------- -->
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger my-5">Logout</a>
+    </div>
+</body>
+</html>
+{% endblock %}

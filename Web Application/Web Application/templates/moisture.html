@@ -1,0 +1,71 @@
+{% extends "visual-navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Moisture</title>
+    <!-- link for Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #dcd5d5;
+        }
+        .frame {
+            align-items: center;
+        }
+        .iframe {
+            align-items: center;
+        }
+        h1 {
+            color: black;
+            font-weight: bolder;
+        }
+        /* tablet and phone views */
+        @media (min-width: 912px) {
+            .container {
+                margin: 5px;
+                align-items: center;
+            }
+            iframe {
+                width: 500px;
+            }
+            .iframe-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 2px;
+            }
+            iframe {
+                width: 370px;
+            }
+ 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="frame d-flex flex-column my-3 text-uppercase display-4">
+            <h1>Soil Moisture</h1>
+            <div class="my-3 d-md-flex justify-content-between iframe-container">
+                <div class="iframe mb-3 mb-md-0">
+                    <iframe width="100%" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2234562/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Soil+Moisture+Level&type=line&xaxis=Time&yaxis=Moisture"></iframe>
+                </div>
+                <div class="iframe">
+                    <iframe width="100%" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2234562/widgets/695387"></iframe>
+                </div>
+            </div>
+            <!-- end of the iframes -->
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

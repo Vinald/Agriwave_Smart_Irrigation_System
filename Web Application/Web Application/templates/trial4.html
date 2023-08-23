@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThingSpeak Data</title>
+    <!-- link for bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #dcd5d5;
+        }
+        h1 {
+            color: green;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 1000px; /* Limit table width on larger screens */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto; /* Center table horizontally */
+        }
+
+        tr th {
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+
+        /* Media query for phones */
+        @media (max-width: 768px) {
+            th, td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="table-responsive"> <!-- Make the table responsive -->
+            <div class="mb-3 text-center">
+                <h1 class="display-4">Real Time Sensor Reading</h1>
+            </div>
+            <table class="table table-striped"> <!-- Add Bootstrap table classes -->
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Soil Moisture</th>
+                        <th>Temperature</th>
+                        <th>LDR</th>
+                    </tr>
+                </thead>
+                <tbody id="data-container">
+                    <!-- Data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch data from ThingSpeak API
+        async function fetchData() {
+            const channelID = '2234562'; // Replace with your ThingSpeak channel ID
+            const url = `https://api.thingspeak.com/channels/${channelID}/feeds.json`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const dataContainer = document.getElementById('data-container');
+                dataContainer.innerHTML = ''; // Clear previous data
+
+                // Display the latest 3 entries in a table format
+                const latestEntries = data.feeds.slice(-2);
+                latestEntries.forEach(feed => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${feed.created_at}</td>
+                        <td>${feed.field1}</td>
+                        <td>${feed.field2}</td>
+                        <td>${feed.field3}</td>
+                    `;
+                    dataContainer.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Fetch data when the page loads
+        fetchData();
+
+        // Fetch data every 10 seconds (adjust the interval as needed)
+        setInterval(fetchData, 10000);
+    </script>
+</body>
+</html>
+{% endblock %}

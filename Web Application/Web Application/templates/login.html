@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #dcd5d5;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 120px auto;
+            padding: 60px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bolder;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* tablet and phone views */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                margin: 60px auto;
+                padding: 20px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div>
+            <h1>Login Page</h1>
+        </div>
+        <div>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <label for="{{ form.username.id }}">Username</label>
+                {{ form.username }}
+                <label for="{{ form.password.id }}">Password</label>
+                {{ form.password }}
+                <input class="btn btn-primary btn-lg" type="submit" value="Login">
+            </form>
+        </div>
+
+        <p><a href="{{ url_for('register') }}">Don't have an account? Sign Up</a></p>
+    </div>
+</body>
+
+</html>
+

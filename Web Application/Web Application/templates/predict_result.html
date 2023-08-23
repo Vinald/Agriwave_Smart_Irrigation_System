@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link for bootsrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Prediction Results</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: #dcd5d5;
+        }
+        .predict{
+            align-items: center;
+            line-height: 30px;
+            background:rgb(244, 244, 241);
+            border-radius: 20px;
+            padding: 150px 10px;
+        }
+        h1, p{
+            font-weight: bolder;
+        }
+        .result{
+            font-weight: bolder;
+            font-size: 30px;
+            color: green;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        /* Responsive styles for tablets and phones */
+        @media (max-width: 768px) {
+            .predict {
+                padding: 50px 10px; /* Adjust padding for smaller screens */
+            }
+            .tit {
+                text-align: center;
+                font-size: 50px;
+            }
+            p {
+                text-align: center;
+            }
+
+            .result {
+                font-size: 24px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="predict d-flex flex-column my-5">
+            <h1 class="display-4 text-uppercase my-4 tit">Prediction Result</h1>
+            <p class="result mb-5">The Model Predicts: {{ prediction_text }}</p>
+            <p class="fs-3"><a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Back to Dashboard</a></p>
+        </div>
+
+    </div>
+</body>
+</html>
+{% endblock %}

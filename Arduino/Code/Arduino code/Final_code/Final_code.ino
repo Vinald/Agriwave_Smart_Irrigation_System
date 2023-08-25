@@ -24,8 +24,8 @@ int relay1State = LOW;
 int pushButton1State = HIGH;
 
 // Constants for ThingSpeak
-const char* ssid = "vinald";
-const char* password = "14231423";
+const char* ssid = "vx";
+const char* password = "62101258";
 unsigned long myChannel = 2234562;
 const char* apiKey = "H0JAID5SFXIIFCJX";
 
@@ -37,8 +37,8 @@ const int relayPin = 32;
 bool pumpStatus = false;
 
 // Constants for Firebase
-#define WIFI_SSID "vinald"
-#define WIFI_PASSWORD "14231423"
+#define WIFI_SSID "vx"
+#define WIFI_PASSWORD "62101258"
 #define FIREBASE_HOST "https://smart-irrigation-system-97ed9-default-rtdb.firebaseio.com/"
 #define FIREBASE_AUTH "AIzaSyA-RMphMNooQI4_ggJBPfmn-pbujESbARc"
 
@@ -57,11 +57,11 @@ const int temperatureThresholdMax = 60;
 const int ldrThresholdMin = 1000;
 
 // Declaring variables for inputs
-float temperature;
-float SoilMoisture;
+int temperature;
+int SoilMoisture;
 
 char* str_CropType = nullptr; 
-float CropDays = 0;
+int CropDays = 0;
 
 //number of days
 unsigned long lastIncrementTime = 0;
@@ -78,14 +78,14 @@ void setupSensors();
 void connectWiFi(const char* ssid, const char* password);
 
 int labelEncodeCropType(char* str_CropType);
-void displaySensorReadings(int mappedSoilMoistureValue, float temperatureC, int ldrValue);
-void serialMonitorDisplay(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus);
+void displaySensorReadings(int mappedSoilMoistureValue, int temperatureC, int ldrValue);
+void serialMonitorDisplay(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus);
 
-void sendDataToFirebase(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus);
-void sendDataToThingSpeak(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus, float CropDays);
+void sendDataToFirebase(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus);
+void sendDataToThingSpeak(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus, int CropDays);
 
-int predictIrrigation(int CropType, float CropDays, int mappedSoilMoistureValue, float temperatureC);
-void controlPump(int prediction, float temperatureC, int mappedSoilMoistureValue, int relayPin, bool &pumpStatus);
+int predictIrrigation(int CropType, int CropDays, int mappedSoilMoistureValue, int temperatureC);
+void controlPump(int prediction, int temperatureC, int mappedSoilMoistureValue, int relayPin, bool &pumpStatus);
 
 void setup() {
   Serial.begin(9600);
@@ -231,27 +231,28 @@ void connectWiFi(const char* ssid, const char* password) {
   }
 }
 
-void displaySensorReadings(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus) {
+void displaySensorReadings(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus) {
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Moisture: ");
+  lcd.print("Mois ");
   lcd.print(mappedSoilMoistureValue);
-  lcd.setCursor(0, 1);
-  lcd.print("Temp: ");
+  lcd.print(" ");
+  lcd.setCursor(10, 0);
+  lcd.print("Temp ");
   lcd.print(temperatureC);
+  lcd.setCursor(0, 1);
+  lcd.print("LDR ");
+  lcd.print(ldrValue);
   lcd.print(" ");
   lcd.setCursor(10, 1);
-  lcd.print("LDR: ");
-  lcd.print(ldrValue);
-  lcd.setCursor(0, 2);
-  lcd.print("Pump status: ");
+  lcd.print("Pump ");
   lcd.print(pumpStatus);
-  lcd.setCursor(0, 3);
+  lcd.setCursor(0, 2);
   lcd.print("Crop days: ");
   lcd.print(CropDays);
 }
 
-void serialMonitorDisplay(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus){
+void serialMonitorDisplay(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus){
     Serial.print("Soil Moisture: ");
     Serial.println(mappedSoilMoistureValue);
     Serial.print("Temperature: ");
@@ -262,7 +263,7 @@ void serialMonitorDisplay(int mappedSoilMoistureValue, float temperatureC, int l
     Serial.println(pumpStatus);
 }
 
-void sendDataToThingSpeak(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus, float CropDays){
+void sendDataToThingSpeak(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus, int CropDays){
   ThingSpeak.setField(1, mappedSoilMoistureValue);
   ThingSpeak.setField(2, temperatureC);
   ThingSpeak.setField(3, ldrValue);
@@ -288,7 +289,7 @@ String getFormattedDateTime(unsigned long millisValue = 0) {
   return String(buffer);
 }
 
-void sendDataToFirebase(int mappedSoilMoistureValue, float temperatureC, int ldrValue, bool pumpStatus) {
+void sendDataToFirebase(int mappedSoilMoistureValue, int temperatureC, int ldrValue, bool pumpStatus) {
   unsigned long currentMillis = millis();
   String timestampStr = getFormattedDateTime(currentMillis / 1000);
   String dataId = String(dataIdCounter++); // Increment the ID and use the new value
@@ -301,13 +302,13 @@ void sendDataToFirebase(int mappedSoilMoistureValue, float temperatureC, int ldr
   Serial.println("Data logged to Firebase with ID: " + dataId);
 }
 
-int predictIrrigation(int CropType, float CropDays, int mappedSoilMoistureValue, float temperatureC) {
+int predictIrrigation(int CropType, int CropDays, int mappedSoilMoistureValue, int temperatureC) {
   float features_array[] = {CropType, CropDays, mappedSoilMoistureValue, temperatureC};
   int prediction = myModel.predict(features_array);
   return prediction;
 }
 
-void controlPump(int prediction, float temperatureC, int mappedSoilMoistureValue, int relayPin, bool &pumpStatus) {
+void controlPump(int prediction, int temperatureC, int mappedSoilMoistureValue, int relayPin, bool &pumpStatus) {
   Serial.print("Predicted Result: ");
   if (prediction == 0) {
     Serial.println("No Irrigation");

@@ -10,23 +10,26 @@
     
     <style>
         body {
-            background-color: #dcd5d5;
-            font-family: sans-serif;
+            background-color: #afddb9;
+            font-family: Arial, Helvetica, sans-serif;
         }
         .container {
             max-width: 400px;
             margin: 120px auto;
             padding: 60px;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+        }
+        h1 {
+            color: green;
         }
         label {
             display: block;
             margin-bottom: 8px;
             color: #333; 
-            font-weight: bold;
+            font-weight: bolder;
         }
         input[type="text"],
         input[type="password"] {
@@ -63,7 +66,7 @@
 
 <body>
     <div class="container">
-        <h1>Register Page</h1>
+        <h1 class="text-uppercase">Agricwave</h1>
 
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -71,7 +74,7 @@
             {{ form.username }}
             <label for="{{ form.password.id }}">Password</label>
             {{ form.password }}
-            <input class="btn btn-primary btn-lg" type="submit" value="Register">
+            <input class="btn btn-primary btn-lg" type="submit" value="Register" style="background: green;">
         </form>
 
         <p><a class="mt-3" href="{{ url_for('login') }}">Already have an account? Log In</a></p>

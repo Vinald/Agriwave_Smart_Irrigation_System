@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #dcd5d5;
+            background-color: #afddb9;
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -30,6 +30,10 @@
             font-weight: bolder;
         }
 
+        h1 {
+            color: green;
+        }
+        
         input[type="text"],
         input[type="password"] {
             width: 100%;
@@ -69,7 +73,7 @@
     <div class="container">
 
         <div>
-            <h1>Login Page</h1>
+            <h1 class="text-uppercase">Agricwave</h1>
         </div>
         <div>
             <form method="POST" action="">
@@ -78,7 +82,7 @@
                 {{ form.username }}
                 <label for="{{ form.password.id }}">Password</label>
                 {{ form.password }}
-                <input class="btn btn-primary btn-lg" type="submit" value="Login">
+                <input class="btn btn-lg" type="submit" value="Login" style="background: green;">
             </form>
         </div>
 

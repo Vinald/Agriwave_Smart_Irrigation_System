@@ -10,8 +10,8 @@
     <title>Prediction Results</title>
     <style>
         body{
-            font-family: sans-serif;
-            background-color: #dcd5d5;
+            background-color: #afddb9;
+            font-family: Arial, Helvetica, sans-serif;
         }
         .predict{
             align-items: center;
@@ -57,7 +57,7 @@
         <div class="predict d-flex flex-column my-5">
             <h1 class="display-4 text-uppercase my-4 tit">Prediction Result</h1>
             <p class="result mb-5">The Model Predicts: {{ prediction_text }}</p>
-            <p class="fs-3"><a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">Back to Dashboard</a></p>
+            <p class="fs-3"><a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg" style="background: green;">Back to Dashboard</a></p>
         </div>
 
     </div>

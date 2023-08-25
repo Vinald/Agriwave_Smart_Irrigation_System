@@ -13,12 +13,13 @@
             background-image: url('static/login.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             font-family: sans-serif;
         }
         .container {
             text-align: center;
             color: white; /* Set text color to white */
-            padding: 100px 0;
+            padding: 50px 0;
         }
         .title {
             font-size: 3rem;
@@ -75,32 +76,44 @@
 
 <body>
     <div class="container">
-        <h1 class="title">Smart Farm Sensor</h1>
+        <h1 class="title display-5 text-white">agriwave Irrigation system</h1>
         <div class="section-container">
 
             <div class="section">
                 <h2>Real-Time Data</h2>
                 <p>View the real-time sensor data from the farm in table form.</p>
-                <a href="{{ url_for('realtime_database') }}" class="btn btn-primary bottom-0">View Data</a>
+                <a href="{{ url_for('realtime_database') }}" class="btn" style="background: green" >View Data</a>
             </div>
 
             <div class="section">
                 <h2>Visualization</h2>
                 <p>Visualize the sensor data using charts and graphs.</p>
-                <a href="{{ url_for('visualization') }}" class="btn btn-primary">Visualize Data</a>
+                <a href="{{ url_for('visualization') }}" class="btn" style="background: green" >Visualize Data</a>
             </div>
 
             <div class="section">
                 <h2>Prediction</h2>
                 <p>Generate predictions and insights from sensor data (For technicians only).</p>
-                <a href="{{ url_for('predict') }}" class="btn btn-primary ">Generate Predictions</a>
+                <a href="{{ url_for('predict') }}" class="btn" style="background: green;">Generate Predictions</a>
             </div>
+            <div class="section" style="background: none;">
+                <!-- to be filled -->
+            </div>
+            
+            <div class="section">
+                <h2>Input data</h2>
+                <p>Enter the type of the crop and how old the crop is in days.</p>
+                <a href="{{ url_for('send') }}" class="btn" style="background: green" >Send data</a>
+            </div>
+            <div class="section" style="background: none;">
+                <!-- to be filled -->
+            </div>  
 
         </div>
 
         <!-- ------------end of the section -------------- -->
 
-        <a href="{{ url_for('logout') }}" class="btn btn-danger my-5">Logout</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger my-3">Logout</a>
     </div>
 </body>
 </html>

@@ -19,12 +19,12 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light"> <!-- Add the "bg-info" class for light blue background -->
-      <a class="navbar-brand text-light" href="{{ url_for('dashboard') }}">Smart Irrigation</a>
+      <a class="navbar-brand text-light fw-bolder text-uppercase " href="{{ url_for('dashboard') }}">agriwave</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav text-uppercase">
           <li class="nav-item">
             <a class="nav-link text-light" href="{{ url_for('dashboard') }}" >Dashboard</a>
           </li>
@@ -33,10 +33,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="{{ url_for('predict') }}">Predict</a>
-          </li>          <li class="nav-item">
+          </li>          
+          <li class="nav-item">
             <a class="nav-link text-light" href="{{ url_for('realtime_database') }}">Database</a>
           </li>
-          <!-- Add more navigation links as needed -->
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url_for('send')}}">Inputs-to-ESP32</a>
+          </li>
         </ul>
       </div>
     </nav>

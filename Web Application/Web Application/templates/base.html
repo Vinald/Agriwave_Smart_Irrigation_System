@@ -27,7 +27,7 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light"> 
-      <a class="navbar-brand text-uppercase text-light" href="{{ url_for('dashboard') }}">Smart Irrigation</a>
+      <a class="navbar-brand text-uppercase text-light fw-bolder" href="{{ url_for('dashboard') }}">agriwave</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
       <!-- end of the menu button -->
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav text-uppercase">
 
           <li class="nav-item ">
             <a class="nav-link text-light" href="{{ url_for('dashboard') }}">Dashboard</a>
@@ -45,8 +45,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="{{ url_for('predict') }}">Predict</a>
-          </li>          <li class="nav-item">
+          </li>  
+          <li class="nav-item">
             <a class="nav-link text-light" href="{{ url_for('realtime_database') }}">Database</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{{ url_for('send')}}">Inputs-to-ESP32</a>
           </li>
         </ul>
       </div>

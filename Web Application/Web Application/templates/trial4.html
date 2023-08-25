@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            font-family: sans-serif;
-            background-color: #dcd5d5;
+            background-color: #afddb9;
+            font-family: Arial, Helvetica, sans-serif;
         }
         h1 {
-            color: green;
+            color: black;
         }
 
         table {
@@ -70,6 +70,7 @@
                         <th>Soil Moisture</th>
                         <th>Temperature</th>
                         <th>LDR</th>
+                        <th>Crop Days</th>
                     </tr>
                 </thead>
                 <tbody id="data-container">
@@ -101,6 +102,8 @@
                         <td>${feed.field1}</td>
                         <td>${feed.field2}</td>
                         <td>${feed.field3}</td>
+                        <td>${feed.field4}</td>
+
                     `;
                     dataContainer.appendChild(row);
                 });

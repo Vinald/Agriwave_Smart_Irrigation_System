@@ -14,6 +14,7 @@ from flask_bcrypt import Bcrypt
 import pandas as pd
 import joblib
 from firebase import firebase
+import requests
 
 
 #Instantiating with the Flask class
@@ -216,6 +217,29 @@ def get_latest_data():
     else:
         return jsonify({'timestamp': 'N/A', 'distance': 'N/A'})
 
+# sends data to the ESP32
+@app.route('/send', methods=['GET', 'POST'])
+def send():
+    if request.method == 'POST':
+        crop_days = request.form.get('cropDays')  # Access the crop days input
+        crop_type = request.form.get('selectType')  # Access the crop type input
+
+        # You can now use crop_days and crop_type as needed.
+        # For example, you can print them:
+        print("Received crop days:", crop_days)
+        print("Received crop type:", crop_type)
+
+        # Send data to ESP32
+        esp32_url = "http://192.168.246.35/send_data"
+        response = requests.post(esp32_url, data={'cropDays': crop_days, 'cropType': crop_type})
+
+        if response.status_code == 200:
+            print("Data sent successfully to ESP32")
+        else:
+            print(f"Failed to send data to ESP32. HTTP response code: {response.status_code}")
+
+    return render_template('send.html')
+
 
 # Function to convert model output to human-readable prediction labels
 def outputer(output):
@@ -230,7 +254,7 @@ def outputer(output):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all() 
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
 
 
 

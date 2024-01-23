@@ -1,0 +1,84 @@
+from google.colab import drive
+drive.mount('/content/drive')
+
+# dataframe and plotting
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# machine learning
+#from lightgbm import LGBMClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Load  the loan.csv file into a pandas dataframe
+irrigation_data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/Irrigation_dataset.csv')
+# irrigation_data = pd.read_csv('/home/beijuka/INTERNSHIP/Assignment/Irrigation_dataset.csv')
+
+irrigation_data = irrigation_data.drop(irrigation_data[irrigation_data['temperature']==263].index)
+
+# separating features and target variable
+x = irrigation_data[['CropType','CropDays', 'SoilMoisture', 'temperature']]
+y = irrigation_data['Irrigation']
+
+
+# One-hot encode the 'Crop type' feature
+encoded = pd.get_dummies(x, columns=['CropType'])
+encoded = encoded.astype(int)
+
+#Inspecting our encoded data
+x.tail(10)
+
+from sklearn.preprocessing import MinMaxScaler
+ # scale our data into range of 0 and 1
+scaler = MinMaxScaler(feature_range=(0, 1))
+x = scaler.fit_transform(x)
+
+
+# Split into test and train_data
+
+x_Train, x_test, y_Train, y_test = train_test_split(x, y, stratify = y, test_size = 0.2, random_state=42)
+
+
+# Split into evaluation and train_data
+
+X_Train, x_val, Y_Train, y_val = train_test_split(x_Train, y_Train, stratify = y_Train, test_size = 0.1, random_state=42)
+
+
+# importing the Random Forest Classifier from sklearn
+from sklearn.ensemble import RandomForestClassifier
+# Initialize the Random Forest Classifier
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Train the classifier on the training data
+rf_classifier.fit(X_Train,Y_Train)
+
+
+# Make predictions on the test data
+rf_y_prediction = rf_classifier.predict(x_val)
+
+# Evaluate the model
+accuracy = accuracy_score(y_val, rf_y_prediction)
+print("Error rate of random forest classifier: ", 1 - accuracy)
+
+
+# Get confusion matrix for Random Forest Classifier model
+print(confusion_matrix(y_val,rf_y_prediction))
+
+
+RF_prediction = rf_classifier.predict(x_test)
+# Get error rate
+print("Error rate of Random Forest classifier: ", 1 - accuracy_score(y_test, RF_prediction))
+
+
+# Get confusion matrix for Random Forest Classifier model
+print(confusion_matrix(y_test,RF_prediction))
+
+
+#Get classification report
+print(classification_report(y_test,RF_prediction, target_names=['No irrigation','Irrigation']))
+
+import joblib
+# Save the model in a binary format using joblib
+joblib.dump(rf_classifier, 'RFC_model.joblib')

@@ -32,8 +32,22 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 
-model = joblib.load('RFC_model.joblib')
-scaler = joblib.load('min_max_scaler.joblib')
+# Get the directory path of the current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Specify the directory containing the files
+# sample_dir = os.path.join(current_dir, 'sample')
+
+# Load the model and scaler from the 'sample' directory
+model_path = os.path.join(current_dir, 'RFC_model.joblib')
+scaler_path = os.path.join(current_dir, 'min_max_scaler.joblib')
+
+model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
+
+
+# model = joblib.load('data_joblib/RFC_model.joblib')
+# scaler = joblib.load('data_joblib/min_max_scaler.joblib')
 
 # Label encoder for crop types
 label_encoder = {
@@ -255,7 +269,3 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all() 
     app.run(debug=True, host='0.0.0.0', port=5000)
-
-
-
-
